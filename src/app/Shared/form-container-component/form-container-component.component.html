@@ -1,0 +1,105 @@
+<div class="container p-5">
+    <form [formGroup]="dueDatesForm">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="form-group">
+                <label>STARTS FROM</label>
+                <div class="input-group">
+                    <span class="input-group-btn">
+                        <button class="btn formButton" type="button" (click)="startFromPicker.toggle()"><i
+                                class="fa fa-calendar" aria-hidden="true"></i></button>
+                    </span>
+                    <input type="text" #startFromPicker="bsDatepicker" placement="bottom" class="form-control"
+                        placeholder="" bsDatepicker [bsConfig]="bsDatepickerConfig"
+                        formControlName="startDate">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4 col-md-12">
+            <div class="form-group">
+                <label class="checkContainer"> ENDS BY
+                    <input type="radio" checked="checked" value="1" name="TypeRadio" formControlName="TypeRadio">
+                    <span class="checkmark"></span>
+                </label>
+                <div class="input-group">
+
+                    <span class="input-group-btn">
+                        <button class="btn formButton" type="button"  (click)="endByPicker.toggle()"><i class="fa fa-calendar"
+                                aria-hidden="true"></i></button>
+                    </span>
+                    <input type="text" #endByPicker="bsDatepicker" placement="bottom" class="form-control"
+                    placeholder="" bsDatepicker [bsConfig]="bsDatepickerConfig"
+                    formControlName="EndByDate">
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-12">
+            <div class="form-group">
+                <label class="checkContainer"> ENDS AFTER
+                    <input type="radio" name="TypeRadio" value="2" formControlName="TypeRadio">
+                    <span class="checkmark"></span>
+                </label>
+                <div class="input-group">                   
+                    <input type="number" class="form-control" formControlName="Occurance">
+                    <label class="p-2">Occurances</label>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-12">
+            <div class="form-group">
+                <label class="checkContainer"> ONGOING
+                    <input type="radio"  name="TypeRadio" value="3" formControlName="TypeRadio" disabled="true">
+                    <span class="checkmark"></span>
+                </label>
+                <div class="input-group">
+                    
+                    <input type="text" class="form-control" placeholder="On going" disabled="true">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <button type="button" class="btn btn-outline-primary" (click)="generateDueDates()">Generate Due Dates</button>
+        </div>
+    </div>
+</form>
+</div>
+
+
+<!-- popup section -->
+
+<div class="modal fade" bsModal #generateDueModal="bs-modal" [config]="{backdrop: 'static'}"
+     tabindex="-1" role="dialog" aria-labelledby="dialog-static-name">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 id="dialog-static-name" class="modal-title pull-left">Generated Due Dates ({{dueDateList.length}})</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="generateDueModal.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <div class="container">
+        <div class="row scrollableDiv">
+            <ng-container *ngFor="let item of dueDateList;let i=index">
+                <div class="col-lg-6 p-2">
+                    <div class="card">
+                        <div class="card-body">
+                            <span class="counter">{{i+1}}</span>
+                          <p class="card-text">{{item | date: 'dd-MMM-yyyy'}} ({{item | date: 'EEEE'}})</p>
+                        </div>
+                      </div>                    
+                </div>
+            </ng-container>
+        </div>
+      </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-primary" (click)="closePopup()">CLOSE</button>
+      </div>
+    </div>
+  </div>
+</div>

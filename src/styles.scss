@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    color: #495057;
+    background-color: #fff;
+    border: none !important;
+    border-bottom: 5px solid rgb(18, 18, 87) !important;
+    /* border-color: #dee2e6 #dee2e6 #fff; */
+}
+
+.theme-green .bs-datepicker-head {
+    background-color: rgb(18, 18, 87) !important;
+}
+
+.theme-green .bs-datepicker-body table td.week span {
+    color: rgb(6, 6, 169) !important;
+}
+
+.theme-green .bs-datepicker-body table td span.selected, .theme-green .bs-datepicker-body table td.selected span, .theme-green .bs-datepicker-body table td span[class*="select-"]:after, .theme-green .bs-datepicker-body table td[class*="select-"] span:after {
+    background-color: #121257 !important;
+}
+

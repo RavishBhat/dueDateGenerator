@@ -1,0 +1,125 @@
+.header{
+    padding: 10px;
+    background: rgba(3, 3, 76, 0.9411764705882353);
+    color: aliceblue;
+    box-shadow: 0px -1px 16px 4px rgb(78, 78, 78);
+    position: fixed;
+    z-index: 1000;
+}
+
+.positionTop{
+    position: relative;
+    top: 5em;
+    border: 1px solid rgb(228, 228, 228);
+    min-height: 500px;
+}
+
+.scrollable{
+    max-height: 440px;
+    overflow-y: auto;
+}
+
+.cardContainer{
+    background: rgb(10, 10, 43);
+    box-shadow: 0px -1px 16px 4px black;
+}
+
+.floatButton{
+    position: absolute;
+    right: 5px;
+    top: 2px;
+}
+
+/* The container */
+.checkContainer {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 18px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Hide the browser's default checkbox */
+  .checkContainer input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: rgb(218, 218, 218);
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .checkContainer:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .checkContainer input:checked ~ .checkmark {
+    background-color: rgb(18, 18, 87);
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .checkContainer input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .checkContainer .checkmark:after {
+    left: 9px;
+    top: 3px;
+    width: 8px;
+    height: 15px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+  .iconCls {
+      padding: 5px;
+      cursor: pointer;
+  }
+  .formButton{
+    background-color: #121257;
+    color: whitesmoke;
+    border-radius: 5px 0px 0px 5px;
+    i {
+        font-size: 20px;
+    }
+}
+
+.scrollableTable{
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+@media only screen and (max-width: 800px) {
+  .floatButton{
+    position: absolute;
+    right: 5px;
+    top: 45px;
+}
+}

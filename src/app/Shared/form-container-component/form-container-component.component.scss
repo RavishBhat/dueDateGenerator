@@ -1,0 +1,100 @@
+.formButton{
+    background-color: #121257;
+    color: whitesmoke;
+    border-radius: 5px 0px 0px 5px;
+    i {
+        font-size: 20px;
+    }
+}
+
+/* The container */
+.checkContainer {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 17px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Hide the browser's default radio button */
+  .checkContainer input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  /* Create a custom radio button */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: rgb(214, 214, 214);
+    border-radius: 50%;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .checkContainer:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+  /* When the radio button is checked, add a blue background */
+  .checkContainer input:checked ~ .checkmark {
+    background-color: #121257;
+  }
+  
+  /* Create the indicator (the dot/circle - hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the indicator (dot/circle) when checked */
+  .checkContainer input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the indicator (dot/circle) */
+  .checkContainer .checkmark:after {
+       top: 9px;
+      left: 9px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: white;
+  }
+
+  .cardUL{
+    padding: 10px;
+    column-count: 3;
+    width: 100%;
+    list-style: none;
+  }
+
+  .scrollableDiv{
+    max-height: 450px;
+    overflow-y: auto;
+  }
+
+  .counter{
+    position: absolute;
+    top: 0;
+    left: 0px;
+    padding: 0px 7px 0px 7px;
+    font-size: 15px;
+    color: whitesmoke;
+    border-radius: 4px 2px 2px 2px;
+    background-color: #121257;
+   
+  }
+
+  .card-text{
+    text-align: center;
+  }
